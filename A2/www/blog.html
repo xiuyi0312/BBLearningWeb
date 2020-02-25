@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial;
+            padding: 10px;
+            background-color: #f1f1f1;
+        }
+        .header {
+            padding: 30px;
+            text-align: center;
+            background-image:url('./img/scenery4.jpg');
+            background-repeat: repeat-x;
+        }
+        .topnav {
+            width: 100%;
+            overflow: hidden;
+            background-color: #333;
+        }
+        .topnav a {
+            float:left;
+            display:block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .topnav a:hover {
+            background-color: #ddd;
+            color: #333;
+        }
+        .leftcolumn {
+            float: left;
+            width: 75%;
+            border:5px solid blue;
+        }
+        .rightcolumn {
+            float: left;
+            width: 25%;
+            background-color:#f1f1f1;
+            padding-left:20px;
+            border:5px solid yellow;
+        }
+        .cover {
+            background-color: #30C081;
+            width: 100%;
+            border:5px solid #red;
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border:5px solid #65ef3f;
+        }
+        .row:after {
+            content: "";
+            display: table;
+            clear:both;
+        }
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #ddd;
+            margin-top: 10px;
+            border: 5px solid blue;
+        }
+        /*展示下拉菜单*/
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left:225px;
+            margin-top:50px;
+            color:white;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow:0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index:1;
+        }
+        .dropdown-content a {
+            color:white;
+            text-decoration:none;
+            padding: 12px 16px;
+            width:100%;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            color: #333;
+            background-color: white;
+        }
+        .topnav:hover .dropdown-content{
+            display: block;
+        }
+        /* 展示提示文本*/
+        .tooltip {
+            font-size: 1.5em;
+            position: relative;
+            padding: 10px 0px;
+            background-color: blue;
+        }
+        .tooltip .tooltiptext {
+            width: 120px;
+            display: none;
+            background-color: #333;
+            color: white;
+            font-size: 0.5em;
+            text-align:center;
+            border-radius: 5px;
+            padding: 5px 5px;
+        }
+        .tooltip:hover .tooltiptext {
+            display: inline;
+        }
+        /* 响应式布局 - 屏幕尺寸小于 800px 时，两列布局改为上下布局 */
+        @media screen and (max-width: 800px) {
+            .leftcolumn, .rightcolumn {
+                width: 100%;
+                padding: 0;
+            }
+        }
+        /* 响应式布局 -屏幕尺寸小于 400px 时，导航等布局改为上下布局 */
+        @media screen and (max-width: 400px) {
+            .topnav a {
+                float: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div style="position: absolute; right: 20px; top: 20px; z-index: 2;">
+        <a style="display:block; background-color:#333; color:white; padding: 10px; text-decoration: none; text-align: center;"
+            href="./login.html">Login</a>
+    </div>
+    <div class="header">
+        <h1>Phoebe Wang's Blog</h1>
+        <p>contact me: zclgyx@163.com</p>
+    </div>
+    <div class="topnav">
+        <a href="#">Home</a>
+        <a href="./photos.html">Gallery</a>
+        <a href="#">About</a>
+        <a href="#">Join us</a>
+        <div class="dropdown-content">
+            <a href="#">Introduction</a>
+            <br />
+            <a href="#">SDK Center</a>
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <h2 >Blog Title</h2>
+                <h5>23/2/2020</h5>
+                <div class="cover" style="height: 200px;">
+                    <img src="./img/scenery3.jpg" width="100%" height="100%" alt="cover lost" />
+                </div>
+                <p>Cover Abstract</p>
+                <p>Abstract</p>
+            </div>
+            <div class="card">
+                <h2>Blog Title</h2>
+                <h5>23/2/2020</h5>
+                <div class="cover" style="height: 200px;">
+                    Cover
+                </div>
+                <p>Cover Abstract</p>
+                <p>Abstract</p>
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <div class="card">
+                <a style="display:block; background-color:#333; color:white; border-radius: 4px; padding: 10px; text-decoration: none; text-align: center;" href="./edit_blog.html">New blog</a>
+            </div>
+            <div class="card">
+                <div class="tooltip">
+                    About US
+                    <span class="tooltiptext">Potato and Pig</span>
+                </div>
+                <div class="cover" style="height:100px;">Portrait</div>
+                <p>Personal Information</p>
+            </div>
+            <div class="card">
+                <h3>Hot Blog</h3>
+                <div class="cover"><p>Picture1</p></div>
+                <div class="cover"><p>Picture2</p></div>
+                <div class="cover"><p>Picture3</p></div>
+            </div>
+            <div class="card">
+                <h3>Follow ME</h3>
+                <p>Surprise</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <h2>Bottom</h2>
+    </div>
+</body>
+</html>
